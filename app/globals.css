@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --light-blue: #3C83F6;   
+  --mainColor: #EDF5FF;   
+}
+
+@layer components{
+  .border-color{
+  @apply border-3 border-red-700 border-solid ; 
+  }
+  .card{
+    @apply p-[20px] border-2 border-gray-200 max-w-[400px] rounded-xl bg-white;
+  }
+  .depart{
+    @apply flex justify-center items-center gap-4 flex-wrap py-[100px] bg-[#F0F7FF] ;
+  }
+  .titleStyle{
+    @apply font-bold text-3xl border-2 text-gray-700 hover:bg-[#3C83F6] hover:text-white hover:border-white transition-all  rounded-xl border-gray-400 py-1 px-4 w-fit ;
+  }
+  
+}
+@layer base{
+  .container{
+    @apply mx-auto px-[30px] lg:px-[60px] ;
+  }
+}
