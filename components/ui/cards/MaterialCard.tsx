@@ -1,26 +1,13 @@
 "use client";
-import { Database, Server, Code, BookOpen } from "lucide-react";
 import { useRouter, usePathname  } from "next/navigation";
+import { MaterialCardProps } from "@/types";
 
-const iconsMap = {
-  database: Database,
-  server: Server,
-  code: Code,
-  bookopen: BookOpen
-};
 
-interface MaterialCardProps {
-  icon: keyof typeof iconsMap;
-  title: string;
-  desc: string;
-  link?: string;
-  grade?: string;
-}
 
-const MaterialCard = ({icon, title, desc, link, grade}: MaterialCardProps) => {
+
+const MaterialCard = ({icon:Icon, title, desc, link, grade}: MaterialCardProps) => {
   const router = useRouter();
   const pathname = usePathname();
-  const Icon = iconsMap[icon];
   const clickView = ()=>{
     if(link && grade){
       router.push(`${grade}/${link}`);

@@ -14,13 +14,13 @@ export default function LandingPage() {
             subtitle="Discover the advantages that make us the trusted choice for modern education"
           />
 
-          <div className="flex justify-center items-center flex-wrap gap-4">
+          <div className="flex justify-around items-center flex-wrap gap-4  ">
             {features.map((feature, ind) => (
               <Card
                 key={ind}
+                icon={feature.icon}
                 title={feature.title}
                 desc={feature.desc}
-                icon={feature.icon}
               />
             ))}
           </div>
@@ -32,14 +32,13 @@ export default function LandingPage() {
           title="Select Your Grade"
           subtitle="Choose your grade level to access courses and examinations"
         />
-        <div className="  flex justify-center items-center flex-wrap gap-4">
+        <div className="  flex justify-center items-center flex-wrap gap-6">
           {grades.map((grade) => (
             <CardGrade
               key={grade.id}
               id={grade.id}
               title={grade.title}
               img={grade.img}
-              linkPrefix="grade"
             />
           ))}
         </div>

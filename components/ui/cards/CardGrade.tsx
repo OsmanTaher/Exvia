@@ -5,14 +5,13 @@ interface CardGradeProps {
   id: string | number;
   title: string;
   img: string;
-  linkPrefix?: string; 
 }
 
-const CardGrade = ({ id, title, img, linkPrefix = "grade" }: CardGradeProps) => {
+const CardGrade = ({ id, title, img }: CardGradeProps) => {
   return (
     <div className="relative bg-white w-[300px] group pb-2.5 m-2.5 grow md:grow-0
                     rounded-[20px] overflow-hidden hover:scale-105 transition-all border-2 border-gray-200">
-      <Link href={`${linkPrefix}/${id}`}>
+      <Link href={`grade/${id}`}>
         <div className="relative">
           <Image
             src={img}

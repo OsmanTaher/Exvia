@@ -6,10 +6,9 @@ interface LectureListProps {
   lectures: LectureData[];
   openLectureId: number | null;
   activeVideoUrl: string;
-  activeQuizId: number | null; // 👈 الخاصية الجديدة
+  activeQuizId: number | null;
   onToggle: (id: number) => void;
   onPlayVideo: (url: string) => void;
-  // 👇 تحديث التوقيع ليشمل رقم المحاضرة
   onStartQuiz: (id: number, quiz: QuizQuestion[]) => void;
 }
 
@@ -17,13 +16,13 @@ const LectureList = ({
   lectures,
   openLectureId,
   activeVideoUrl,
-  activeQuizId, // استلامها
+  activeQuizId, 
   onToggle,
   onPlayVideo,
   onStartQuiz,
 }: LectureListProps) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 ">
       {lectures.map((item) => (
         <LectureCard
           key={item.id}
@@ -36,7 +35,7 @@ const LectureList = ({
             <LectureContent
               lecture={item}
               activeVideoUrl={activeVideoUrl}
-              activeQuizId={activeQuizId} // 👈 تمريرها للابن
+              activeQuizId={activeQuizId}
               onPlay={onPlayVideo}
               onStartQuiz={onStartQuiz}
             />

@@ -27,17 +27,17 @@ const Home = () => {
                         bg-linear-to-r from-blue-300 via-blue-500 to-blue-700 
                         bg-clip-text text-transparent"
           >
-            Welcome to Student Exam Platform
+            Welcome to Student Exvia Platform
           </h1>
 
-          <p className=" text-slate-200 mb-8 mx-auto text-[20px] md:text-[30px] ">
-            Experience a modern, secure, and efficient way to take exams
+          <p className=" text-slate-300 font-semibold mb-8 mx-auto text-[30px] md:text-[40px] ">
+            You can learn without paying a dime
           </p>
           <div className="flex justify-center"></div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

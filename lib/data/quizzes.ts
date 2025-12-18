@@ -116,113 +116,117 @@ export const quizLecture1: QuizQuestion[] = [
 
 export const quizLecture2: QuizQuestion[] = [
   {
-id: 1,
-question: "What was the main problem with Abbott Training’s £5,000 email machine project?",
-options: [
-"Hardware failure",
-"Lack of technical specifications",
-"It focused on technology but not on how it would be used",
-"Insufficient network speed"
-],
-correctAnswer: 2 // Focused on tech, not use​
-},
-{
-id: 2,
-question: "By 1999, how was Abbott Training’s expensive network primarily used?",
-options: [
-"Video conferencing",
-"Enterprise resource planning",
-"Email only",
-"Customer relationship management"
-],
-correctAnswer: 2 // Email only​
-},
-{
-id: 3,
-question: "According to Mintzberg, how do most people typically DEFINE strategy?",
-options: [
-"As a pattern",
-"As a plan",
-"As a culture",
-"As a structure"
-],
-correctAnswer: 1 // As a plan​
-},
-{
-id: 4,
-question: "In Mintzberg’s view, what do people often DESCRIBE when asked about a competitor’s strategy?",
-options: [
-"Its mission statement",
-"Its future goals",
-"A pattern in past behavior",
-"Its organizational chart"
-],
-correctAnswer: 2 // Pattern in action over time​
-},
-{
-id: 5,
-question: "Which school views strategy as an objective, analytical process of deliberate design?",
-options: [
-"Learning School",
-"Cultural School",
-"Design School",
-"Political School"
-],
-correctAnswer: 2 // Design School​
-},
-{
-id: 6,
-question: "Which of the following is NOT one of Ansoff’s reduction steps in deliberate strategy?",
-options: [
-"Identify objectives",
-"Diagnose current position",
-"Determine the gap",
-"Ignore external environment"
-],
-correctAnswer: 3 // Ignore external environment​
-},
-{
-id: 7,
-question: "In the Johnson and Scholes framework, which phase focuses on scanning the environment and assessing capability?",
-options: [
-"Strategic Analysis",
-"Strategic Choice",
-"Strategy Implementation",
-"Post-implementation review"
-],
-correctAnswer: 0 // Strategic Analysis​
-},
-{
-id: 8,
-question: "What is the core idea of emergent strategy?",
-options: [
-"Strategy is always written in a formal document",
-"Strategy must come only from top management",
-"Strategy can appear as a realized pattern without explicit intention",
-"Strategy never changes over time"
-],
-correctAnswer: 2 // Realized pattern without explicit intention​
-},
-{
-id: 9,
-question: "In the IBM case, what blocked the organization from responding to the microcomputer threat?",
-options: [
-"Lack of engineers",
-"Too much cash",
-"A rigid, long-held mainframe strategy and structure",
-"Government regulations"
-],
-correctAnswer: 2 // Rigid mainframe strategy/structure​
-},
-{
-id: 10,
-question: "What is the main goal of Logical Incrementalism according to Quinn?",
-options: [
-"Eliminate all uncertainty before acting",
-"Make one big, irreversible strategic bet",
-"Decrease risk of major failure and increase flexibility",
-"Rely only on formal annual plans"
-],
-correctAnswer: 2 // Decrease risk, increase flexibility​
-}
+    id: 1,
+    question:
+      "What was the main problem with Abbott Training’s £5,000 email machine project?",
+    options: [
+      "Hardware failure",
+      "Lack of technical specifications",
+      "It focused on technology but not on how it would be used",
+      "Insufficient network speed",
+    ],
+    correctAnswer: 2, // Focused on tech, not use​
+  },
+  {
+    id: 2,
+    question:
+      "By 1999, how was Abbott Training’s expensive network primarily used?",
+    options: [
+      "Video conferencing",
+      "Enterprise resource planning",
+      "Email only",
+      "Customer relationship management",
+    ],
+    correctAnswer: 2, // Email only​
+  },
+  {
+    id: 3,
+    question:
+      "According to Mintzberg, how do most people typically DEFINE strategy?",
+    options: ["As a pattern", "As a plan", "As a culture", "As a structure"],
+    correctAnswer: 1, // As a plan​
+  },
+  {
+    id: 4,
+    question:
+      "In Mintzberg’s view, what do people often DESCRIBE when asked about a competitor’s strategy?",
+    options: [
+      "Its mission statement",
+      "Its future goals",
+      "A pattern in past behavior",
+      "Its organizational chart",
+    ],
+    correctAnswer: 2, // Pattern in action over time​
+  },
+  {
+    id: 5,
+    question:
+      "Which school views strategy as an objective, analytical process of deliberate design?",
+    options: [
+      "Learning School",
+      "Cultural School",
+      "Design School",
+      "Political School",
+    ],
+    correctAnswer: 2, // Design School​
+  },
+  {
+    id: 6,
+    question:
+      "Which of the following is NOT one of Ansoff’s reduction steps in deliberate strategy?",
+    options: [
+      "Identify objectives",
+      "Diagnose current position",
+      "Determine the gap",
+      "Ignore external environment",
+    ],
+    correctAnswer: 3, // Ignore external environment​
+  },
+  {
+    id: 7,
+    question:
+      "In the Johnson and Scholes framework, which phase focuses on scanning the environment and assessing capability?",
+    options: [
+      "Strategic Analysis",
+      "Strategic Choice",
+      "Strategy Implementation",
+      "Post-implementation review",
+    ],
+    correctAnswer: 0, // Strategic Analysis​
+  },
+  {
+    id: 8,
+    question: "What is the core idea of emergent strategy?",
+    options: [
+      "Strategy is always written in a formal document",
+      "Strategy must come only from top management",
+      "Strategy can appear as a realized pattern without explicit intention",
+      "Strategy never changes over time",
+    ],
+    correctAnswer: 2, // Realized pattern without explicit intention​
+  },
+  {
+    id: 9,
+    question:
+      "In the IBM case, what blocked the organization from responding to the microcomputer threat?",
+    options: [
+      "Lack of engineers",
+      "Too much cash",
+      "A rigid, long-held mainframe strategy and structure",
+      "Government regulations",
+    ],
+    correctAnswer: 2, // Rigid mainframe strategy/structure​
+  },
+  {
+    id: 10,
+    question:
+      "What is the main goal of Logical Incrementalism according to Quinn?",
+    options: [
+      "Eliminate all uncertainty before acting",
+      "Make one big, irreversible strategic bet",
+      "Decrease risk of major failure and increase flexibility",
+      "Rely only on formal annual plans",
+    ],
+    correctAnswer: 2, // Decrease risk, increase flexibility​
+  },
 ];

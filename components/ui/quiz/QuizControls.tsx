@@ -11,7 +11,6 @@ interface QuizControlsProps {
 const QuizControls = ({ isFirst, isLast, onPrev, onNext, onSubmit }: QuizControlsProps) => {
   return (
     <div className="flex justify-between items-center border-t pt-6 mt-4">
-      {/* زر السابق */}
       <button
         disabled={isFirst}
         onClick={onPrev}
@@ -20,7 +19,6 @@ const QuizControls = ({ isFirst, isLast, onPrev, onNext, onSubmit }: QuizControl
         <ArrowLeft className="w-4 h-4" /> Previous
       </button>
 
-      {/* زر التالي أو إنهاء */}
       {isLast ? (
          <button
            onClick={onSubmit}

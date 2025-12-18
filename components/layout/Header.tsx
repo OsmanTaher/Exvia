@@ -7,14 +7,14 @@ const Header = () => {
       
       <div className="container h-16 flex items-center justify-between">
         
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition">
+        <Link href="/" className="flex items-center gap- hover:opacity-80 transition">
           <div className="bg-blue-500 p-1.5 rounded-lg">
-            <GraduationCap className="h-6 w-6 text-white" />
+            <GraduationCap className="h-4 w-4 sm:h-6 sm:w-6 text-white " />
           </div>
-          <span className="text-xl font-bold text-slate-900">Exvia</span>
+          <span className="text-xl font-bold text-slate-900 ml-2">Exvia</span>
         </Link>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-1 sm:gap-6 ">
           <Link href="/" className="text-sm font-medium text-slate-700 hover:bg-sky-500 hover:text-white px-5 py-2 rounded-md transition-colors">
             Home
           </Link>

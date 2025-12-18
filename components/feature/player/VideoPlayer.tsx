@@ -10,7 +10,7 @@ const getEmbedUrl = (url: string) => {
 
 const VideoPlayer = ({ videoUrl }: VideoPlayerProps) => {
   return (
-    // قمت بإزالة زر الإغلاق (X) من هنا
+    
     <div className="w-full bg-black rounded-2xl overflow-hidden shadow-2xl relative aspect-video animate-in fade-in zoom-in duration-300 border border-gray-800">
       <iframe
         src={getEmbedUrl(videoUrl)}

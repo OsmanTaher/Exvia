@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { QuizQuestion } from "@/types";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css"; // 👈 استدعاء ستايل المكتبة
+import "react-circular-progressbar/dist/styles.css";
 import QuizHeader from "../../ui/quiz/QuizHeader";
 import QuestionNav from "../../ui/quiz/QuestionNav";
 import QuestionCard from "../../ui/quiz/QuestionCard";
@@ -17,7 +17,7 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [answers, setAnswers] = useState<{ [key: number]: number }>({});
   const [timeLeft, setTimeLeft] = useState(30 * 60);
-  const [showResult, setShowResult] = useState(false); // 👈 حالة لإظهار النتيجة
+  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     if (timeLeft <= 0 && !showResult) {
@@ -31,12 +31,10 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
     setAnswers((prev) => ({ ...prev, [currentQIndex]: optionIndex }));
   };
 
-  // دالة إنهاء الامتحان وحساب النتيجة
   const handleFinishExam = () => {
     setShowResult(true);
   };
 
-  // حساب الدرجة
   const calculateScore = () => {
     let correct = 0;
     quizData.forEach((q, index) => {
@@ -45,7 +43,6 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
     return Math.round((correct / quizData.length) * 100);
   };
 
-  // --- واجهة عرض النتيجة ---
   if (showResult) {
     const score = calculateScore();
     const isPassed = score >= 50;
@@ -59,7 +56,7 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
             value={score}
             text={`${score}%`}
             styles={buildStyles({
-              // تلوين الدائرة: أخضر للناجح، أحمر للراسب
+
               pathColor: isPassed ? `#22c55e` : `#ef4444`,
               textColor: isPassed ? `#15803d` : `#b91c1c`,
               trailColor: "#f3f4f6",
@@ -81,7 +78,6 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
     );
   }
 
-  // --- واجهة الامتحان العادية ---
   return (
     <div className="w-full bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
       <QuizHeader timeLeft={timeLeft} />
@@ -103,7 +99,7 @@ const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
           isLast={currentQIndex === quizData.length - 1}
           onPrev={() => setCurrentQIndex((p) => p - 1)}
           onNext={() => setCurrentQIndex((p) => p + 1)}
-          onSubmit={handleFinishExam} // 👈 عند الضغط يتم حساب النتيجة
+          onSubmit={handleFinishExam} 
         />
       </div>
     </div>

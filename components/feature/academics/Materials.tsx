@@ -1,5 +1,6 @@
 "use client";
 import { coursesData } from "@/lib/data/courses";
+import { BookOpen } from "lucide-react";
 import MaterialCard from "@/components/ui/cards/MaterialCard";
 
 const materials = ({ department }: { department: string }) => {
@@ -17,7 +18,7 @@ const materials = ({ department }: { department: string }) => {
           {coursesData.map((course, index) => (
             <MaterialCard
               key={index}
-              icon="bookopen"
+              icon= {BookOpen}
               title={course.title}
               desc={course.desc}
             />

@@ -1,15 +1,20 @@
-// types/index.ts
-import { LucideIcon  } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
-// 1. تعريف الكورس (منقول من courses.ts)
+export interface MaterialCardProps {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  link?: string;
+  grade?: string;
+}
+
 export interface Course {
   id: number;
   title: string;
   desc: string;
-  depart: string; // أو "IS" | "CS" | "IT" لو حابب تحددها بدقة
+  depart: "IS" | "CS" | "IT"; 
 }
 
-// 2. تعريف السؤال (منقول من quizzes.ts)
 export interface QuizQuestion {
   id: number;
   question: string;
@@ -17,18 +22,17 @@ export interface QuizQuestion {
   correctAnswer: number;
 }
 
-// 3. تعريف المحاضرة (منقول من lectures.ts)
 export interface LectureData {
   id: number;
   title: string;
   week: string;
   videoUrl: string;
   pdfUrl: string;
-  quiz: QuizQuestion[]; // لاحظ إنه بيستخدم النوع اللي عرفناه فوق
+  quiz: QuizQuestion[]; 
 }
 
 export interface Departments {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   depart: string;
   desc: string;

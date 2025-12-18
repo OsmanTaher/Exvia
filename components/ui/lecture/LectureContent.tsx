@@ -6,9 +6,8 @@ import { LectureData, QuizQuestion } from "@/types";
 interface LectureContentProps {
   lecture: LectureData;
   activeVideoUrl: string;
-  activeQuizId: number | null; // 👈 1. استقبال حالة الكويز النشط
+  activeQuizId: number | null; 
   onPlay: (url: string) => void;
-  // 👈 2. تحديث الدالة لتستقبل ID المحاضرة
   onStartQuiz: (id: number, quiz: QuizQuestion[]) => void;
 }
 
@@ -20,13 +19,10 @@ const LectureContent = ({
   onStartQuiz 
 }: LectureContentProps) => {
   
-  // هل الفيديو الخاص بهذه المحاضرة يعمل؟
   const isVideoPlaying = activeVideoUrl === lecture.videoUrl;
   
-  // هل الكويز الخاص بهذه المحاضرة مفتوح؟
   const isQuizActive = activeQuizId === lecture.id;
 
-  // --- دالة التحميل (Download Logic) ---
   const handleDownload = () => {
     if (!lecture.pdfUrl) {
       alert("No PDF file attached.");
@@ -45,20 +41,18 @@ const LectureContent = ({
   return (
     <div className="p-4 flex flex-col gap-3 bg-gray-50/50">
       
-      {/* 1. Video Item */}
       <LectureItem
         icon1={Video}
-        // لو شغال اعرض X، لو لا اعرض Play
+
         icon2={isVideoPlaying ? X : Play}
         title={`${lecture.title} Video`}
         desc={isVideoPlaying ? "Click close to stop watching" : "Watch the lecture explanation"}
-        actionText={isVideoPlaying ? "Close Video" : "Play Video"}
-        // لو شغال لونه أحمر، لو لا أزرق
+        actionText={isVideoPlaying ? "Video" : "Video"}
+
         variant={isVideoPlaying ? "red" : "blue"}
         onAction={() => onPlay(lecture.videoUrl)}
       />
 
-      {/* 2. PDF Item */}
       <LectureItem
         icon1={FileText}
         icon2={Download}
@@ -68,17 +62,16 @@ const LectureContent = ({
         onAction={handleDownload}
       />
 
-      {/* 3. Quiz Item */}
       <LectureItem
         icon1={ClipboardList}
-        // لو مفتوح اعرض X، لو مقفول اعرض Play
+
         icon2={isQuizActive ? X : Play}
         title="Lecture Quiz"
         desc={isQuizActive ? "Exam in progress..." : "Test your understanding"}
-        actionText={isQuizActive ? "Close Exam" : "Start Exam"}
-        // لو مفتوح لونه أحمر، لو مقفول أخضر
+        actionText={isQuizActive ? "Close" : "Start"}
+
         variant={isQuizActive ? "red" : "green"}
-        // نرسل ID المحاضرة + الأسئلة
+
         onAction={() => onStartQuiz(lecture.id, lecture.quiz)}
       />
       
