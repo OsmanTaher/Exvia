@@ -3,7 +3,7 @@ import { FolderOpen } from "lucide-react";
 
 const NotFound = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-4 text-center min-h-[400px] bg-[#EDF5FF] ">
+    <div className="flex flex-col items-center justify-center py-20 px-4 text-center min-h-screen bg-[#EDF5FF]">
       <div className="bg-gray-100 p-6 rounded-full mb-6 shadow-sm">
         <FolderOpen className="w-12 h-12 text-gray-400" />
       </div>

@@ -43,8 +43,8 @@ const LectureItem = ({
           <Icon1 className="w-6 h-6" />
         </div>
         <div>
-          <h4 className="font-semibold text-gray-800">{title}</h4>
-          <p className="text-sm text-gray-500">{desc}</p>
+          <h4 className="font-semibold text-gray-800 hidden sm:block">{title}</h4>
+          <p className="text-sm text-gray-500 hidden sm:block">{desc}</p>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const LectureItem = ({
         className={`flex items-center gap-2 px-4 py-2 text-white rounded-lg transition-colors cursor-pointer font-medium ${bgClass}`}
       >
         <Icon2 className="w-4 h-4" />
-        <span>{actionText}</span>
+        <span className="hidden md:inline">{actionText}</span>
       </button>
     </div>
   );

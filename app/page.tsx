@@ -1,11 +1,9 @@
 import LandingPage from "@/components/feature/page/LandingPage";
 
-function page() {
+export default function MainPage() {
   return (
-    <main>
+    <>
       <LandingPage />
-    </main>
+    </>
   );
 }
-
-export default page;

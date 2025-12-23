@@ -6,7 +6,7 @@ import MaterialCard from "@/components/ui/cards/MaterialCard";
 const Department = ({ grade }: { grade: string }) => {
   const pathname = useRouter();
   return (
-    <section className="py-[50px] bg-[#F0F7FF] ">
+    <section className="py-[50px] bg-[#EDF5FF] ">
       <h3 onClick={ ()=> pathname.back() } className="titleStyle md:mb-12  transform translate-x-4 sm:translate-x-16 cursor-pointer">Back </h3>
       <div className=" depart ">
         {departments.map((depart, index) => {

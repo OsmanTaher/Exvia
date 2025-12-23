@@ -66,7 +66,7 @@ const Login = () => {
           </div>
           <h1 className="text-2xl font-bold text-gray-800">Exvia Platform</h1>
           <p className="text-gray-600 mt-2 text-md font-semibold">
-            You can learn without paying a dime
+            You can learn without paying a pound
           </p>
         </div>
 
@@ -161,7 +161,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+            className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
           >
             {loading ? (
               <>

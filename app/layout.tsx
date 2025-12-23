@@ -1,39 +1,42 @@
 import type { Metadata } from "next";
-import { Outfit, Geist_Mono } from "next/font/google";
-import Header from "../components/layout/Header";
-import Home from "../components/layout/Home";
-import Footer from "../components/layout/Footer";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { cookies } from "next/headers";
+import Home from "@/components/layout/Home";
 
-const outfit = Outfit({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Exvia Platform",
-  description: "Luxor University Student Exam System",
+  description: "Educational Platform",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const session = cookieStore.get("session");
+  let user = null;
+
+  if (session) {
+    try {
+      user = JSON.parse(session.value);
+    } catch (e) {
+      console.error("Session parse error", e);
+    }
+  }
+
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${geistMono.variable} antialiased`}>
-        {/* ---------- You Can Add Here NavBar ----------. */}
-        <Header />
+      <body className={inter.className}>
+        <Header user={user} />
         <Home />
-        {children}
+        <main className="min-h-screen bg-[#EDF5FF]">{children}</main>
         <Footer />
-        {/* ---------- & That Is A Footer ----------! */}
       </body>
     </html>
   );

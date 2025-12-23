@@ -6,7 +6,7 @@ import MaterialCard from "@/components/ui/cards/MaterialCard";
 const Materials = ({ department }: { department: string }) => {
 
   return (
-    <section className=" bg-[#EDF5FF]">
+    <section className=" bg-[#EDF5FF] ">
       <div className="container pt-[50px]">
         <h1 className="titleStyle">
           {department == "IT"

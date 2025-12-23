@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI ="mongodb+srv://nursemohamedtaher_db_user:rT9A0acppfjFnP6A@cluster0.r1lbtbd.mongodb.net/?appName=Cluster0";
+// Add URL for MongoDB 
+const MONGODB_URI ="...";
+
+// After that, open "http://localhost:3000/api/seed"
+// run the Project -> npm run dev
 
 const connectToDatabase = async () => {
   if (mongoose.connections[0].readyState) {
@@ -17,3 +21,4 @@ const connectToDatabase = async () => {
 };
 
 export default connectToDatabase;
+

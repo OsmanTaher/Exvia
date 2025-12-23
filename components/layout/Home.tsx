@@ -35,7 +35,7 @@ const Home = () => {
           </h1>
 
           <p className=" text-slate-300 font-semibold mb-8 mx-auto text-[30px] md:text-[40px] ">
-            You can learn without paying a dime
+            You can learn without paying a pound
           </p>
           <div className="flex justify-center"></div>
         </div>

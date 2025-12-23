@@ -24,7 +24,7 @@ export default function AdminDashboard() {
     name: "",
     password: "123456",
     role: "student",
-    grade: "1",
+    grade: "",
     department: "IS",
     academicDegree: "",
     age: "",

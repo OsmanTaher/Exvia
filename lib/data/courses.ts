@@ -4,7 +4,7 @@ export const coursesData : Course[] = [
   {
     id: 1,
     title: "IS Strategy",
-    desc: "Software development lifecycle (SDLC), architecture, and quality assuranceSDLC phases, system design, and software testing.",
+    desc: "Software development lifecycle (SDLC), architecture, and quality assuranceSDLC phases, system design.",
     depart: "IS",
   },
   {

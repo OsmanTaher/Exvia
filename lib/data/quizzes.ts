@@ -231,3 +231,10 @@ export const quizLecture2: QuizQuestion[] = [
     correctAnswer: 2, // Decrease risk, increase flexibility​
   },
 ];
+
+
+export const quizzes: QuizQuestion[][] = [
+    quizLecture1,
+    quizLecture2,
+    // quizLecture3,
+];

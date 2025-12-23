@@ -1,3 +1,6 @@
+"use client";
+import { useEffect } from "react";
+
 interface VideoPlayerProps {
   videoUrl: string;
 }
@@ -9,8 +12,13 @@ const getEmbedUrl = (url: string) => {
 };
 
 const VideoPlayer = ({ videoUrl }: VideoPlayerProps) => {
+  
+  // دالة الصعود للأعلى عند فتح الفيديو
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    
     <div className="w-full bg-black rounded-2xl overflow-hidden shadow-2xl relative aspect-video animate-in fade-in zoom-in duration-300 border border-gray-800">
       <iframe
         src={getEmbedUrl(videoUrl)}
