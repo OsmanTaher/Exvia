@@ -20,8 +20,11 @@ const LectureContent = ({
 }: LectureContentProps) => {
   
   const isVideoPlaying = activeVideoUrl === lecture.videoUrl;
-  
   const isQuizActive = activeQuizId === lecture.id;
+
+  const hasVideo = lecture.videoUrl && lecture.videoUrl.trim() !== "";
+  
+  const hasQuiz = lecture.quiz && lecture.quiz.length > 0;
 
   const handleDownload = () => {
     if (!lecture.pdfUrl) {
@@ -41,39 +44,44 @@ const LectureContent = ({
   return (
     <div className="p-4 flex flex-col gap-3 bg-gray-50/50">
       
-      <LectureItem
-        icon1={Video}
+      {hasVideo && (
+        <LectureItem
+          icon1={Video}
+          icon2={isVideoPlaying ? X : Play}
+          title={`${lecture.title} Video`}
+          desc={isVideoPlaying ? "Click close to stop watching" : "Watch the lecture explanation"}
+          actionText={isVideoPlaying ? "Close" : "Video"}
+          variant={isVideoPlaying ? "red" : "blue"}
+          onAction={() => onPlay(lecture.videoUrl)}
+        />
+      )}
 
-        icon2={isVideoPlaying ? X : Play}
-        title={`${lecture.title} Video`}
-        desc={isVideoPlaying ? "Click close to stop watching" : "Watch the lecture explanation"}
-        actionText={isVideoPlaying ? "Video" : "Video"}
+      {lecture.pdfUrl && (
+        <LectureItem
+          icon1={FileText}
+          icon2={Download}
+          title="Lecture Notes (PDF)"
+          desc="Download study materials"
+          actionText="Download"
+          onAction={handleDownload}
+        />
+      )}
 
-        variant={isVideoPlaying ? "red" : "blue"}
-        onAction={() => onPlay(lecture.videoUrl)}
-      />
-
-      <LectureItem
-        icon1={FileText}
-        icon2={Download}
-        title="Lecture Notes (PDF)"
-        desc="Download study materials"
-        actionText="Download"
-        onAction={handleDownload}
-      />
-
-      <LectureItem
-        icon1={ClipboardList}
-
-        icon2={isQuizActive ? X : Play}
-        title="Lecture Quiz"
-        desc={isQuizActive ? "Exam in progress..." : "Test your understanding"}
-        actionText={isQuizActive ? "Close" : "Start"}
-
-        variant={isQuizActive ? "red" : "green"}
-
-        onAction={() => onStartQuiz(lecture.id, lecture.quiz)}
-      />
+      {hasQuiz && (
+        <LectureItem
+          icon1={ClipboardList}
+          icon2={isQuizActive ? X : Play}
+          title="Lecture Quiz"
+          desc={isQuizActive ? "Exam in progress..." : "Test your understanding"}
+          actionText={isQuizActive ? "Close" : "Start"}
+          variant={isQuizActive ? "red" : "green"}
+          onAction={() => onStartQuiz(lecture.id, lecture.quiz)}
+        />
+      )}
+      
+      {!hasVideo && !hasQuiz && !lecture.pdfUrl && (
+        <p className="text-center text-gray-500 py-4">No content available for this lecture.</p>
+      )}
       
     </div>
   );

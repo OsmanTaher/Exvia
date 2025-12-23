@@ -9,7 +9,7 @@ const page = async ({
   const { id, dpt } = await params;
   return (
     <div>
-      {dpt == "CS" || dpt == "IT" || id == "4" ? (
+      {dpt == "CS" || dpt == "IT" || id == "4" || id == "1" || id == "2" ? (
         <NotFound />
       ) : (
         <Materials department={dpt} />

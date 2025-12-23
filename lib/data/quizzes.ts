@@ -1,5 +1,6 @@
 import { QuizQuestion } from "@/types";
 
+
 export const quizLecture1: QuizQuestion[] = [
   {
     id: 1,

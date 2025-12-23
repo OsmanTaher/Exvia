@@ -49,3 +49,14 @@ export interface Features {
   title: string;
   desc: string;
 }
+
+export interface User {
+  _id: string;
+  code: string;
+  name: string;
+  password?: string;
+  role: "student" | "admin" | "professor";
+  grade?: string;
+  department?: string;
+  createdAt?: string;
+}

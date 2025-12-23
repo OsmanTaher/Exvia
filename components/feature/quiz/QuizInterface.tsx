@@ -16,7 +16,7 @@ interface QuizInterfaceProps {
 const QuizInterface = ({ quizData, onExit }: QuizInterfaceProps) => {
   const [currentQIndex, setCurrentQIndex] = useState(0);
   const [answers, setAnswers] = useState<{ [key: number]: number }>({});
-  const [timeLeft, setTimeLeft] = useState(30 * 60);
+  const [timeLeft, setTimeLeft] = useState(10 * 60);
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {

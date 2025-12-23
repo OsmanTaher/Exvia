@@ -3,7 +3,8 @@ import { coursesData } from "@/lib/data/courses";
 import { BookOpen } from "lucide-react";
 import MaterialCard from "@/components/ui/cards/MaterialCard";
 
-const materials = ({ department }: { department: string }) => {
+const Materials = ({ department }: { department: string }) => {
+
   return (
     <section className=" bg-[#EDF5FF]">
       <div className="container pt-[50px]">
@@ -29,4 +30,4 @@ const materials = ({ department }: { department: string }) => {
   );
 };
 
-export default materials;
+export default Materials;

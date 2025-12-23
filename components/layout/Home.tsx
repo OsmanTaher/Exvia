@@ -1,10 +1,14 @@
 "use client";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+
 
 const Home = () => {
   const pathname = usePathname();
-  if (pathname === "/login") {
+  const searchParams = useSearchParams();
+  const title = searchParams.get("title") ?? "Course";
+  if (pathname === "/login" ||( pathname.includes("/course") && title == "IS Strategy")) {
     return null;
   }
   return (

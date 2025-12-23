@@ -2,33 +2,36 @@
 import "@/app/globals.css";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { lectures } from "@/lib/data/lectures"; 
+import { lectures } from "@/lib/data/lectures";
 import { QuizQuestion } from "@/types";
 
 import SectionHeader from "../../ui/common/SectionHeader";
-import VideoPlayer from "../player/VideoPlayer";
+import VideoPlayer from "../quiz/player/VideoPlayer";
 import QuizInterface from "../quiz/QuizInterface";
 import LectureList from "../../ui/course/LectureList";
+import NotFound from "../page/NotFound";
+import Home from "@/components/layout/Home";
 
 const Course = () => {
   const searchParams = useSearchParams();
   const title = searchParams.get("title") ?? "Course";
 
   const [openLectureId, setOpenLectureId] = useState<number | null>(null);
-  const [viewMode, setViewMode] = useState<"default" | "video" | "quiz">("default");
-  
+  const [viewMode, setViewMode] = useState<"default" | "video" | "quiz">(
+    "default"
+  );
+
   const [activeVideo, setActiveVideo] = useState<string>("");
   const [activeQuiz, setActiveQuiz] = useState<QuizQuestion[]>([]);
-  
-  const [activeQuizId, setActiveQuizId] = useState<number | null>(null);
 
+  const [activeQuizId, setActiveQuizId] = useState<number | null>(null);
 
   const handleToggleVideo = (url: string) => {
     if (viewMode === "video" && activeVideo === url) {
       handleBackToDefault();
     } else {
       setActiveVideo(url);
-      setActiveQuizId(null); 
+      setActiveQuizId(null);
       setViewMode("video");
     }
   };
@@ -39,7 +42,7 @@ const Course = () => {
     } else {
       setActiveQuiz(quiz);
       setActiveQuizId(lectureId);
-      setActiveVideo("");         
+      setActiveVideo("");
       setViewMode("quiz");
     }
   };
@@ -51,44 +54,37 @@ const Course = () => {
     setActiveQuizId(null);
   };
 
+  if (title !== "IS Strategy") {
+    return  <NotFound />
+  }
 
   return (
     <section className="bg-[#EDF5FF] min-h-screen pb-20">
       <div className="w-full container mx-auto p-4 max-w-[1260px]">
-        
         <div className="mb-8 animate-in fade-in duration-500">
-          
           {viewMode === "default" && (
-            <SectionHeader 
-               title={title} 
-               subtitle="Course Content & Materials" 
+            <SectionHeader
+              title={title}
+              subtitle="Course Content & Materials"
             />
           )}
 
-          {viewMode === "video" && (
-             <VideoPlayer videoUrl={activeVideo} />
-          )}
+          {viewMode === "video" && <VideoPlayer videoUrl={activeVideo} />}
 
           {viewMode === "quiz" && (
-            <QuizInterface 
-               quizData={activeQuiz} 
-               onExit={handleBackToDefault} 
-            />
+            <QuizInterface quizData={activeQuiz} onExit={handleBackToDefault} />
           )}
         </div>
 
         <LectureList
           lectures={lectures}
           openLectureId={openLectureId}
-
           activeVideoUrl={activeVideo}
           activeQuizId={activeQuizId}
-
           onToggle={(id) => setOpenLectureId(openLectureId === id ? null : id)}
           onPlayVideo={handleToggleVideo}
           onStartQuiz={handleToggleQuiz}
         />
-
       </div>
     </section>
   );
